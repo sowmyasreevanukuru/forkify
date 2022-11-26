@@ -17,11 +17,11 @@ class AddRecipeView extends View {
   }
 
  _addHandlerRecipeWindowToggle() {
-    this._btnOpenNewRecipeOverlay.addEventListener(
+    this._btnOpen.addEventListener(
       'click',
       this.toggleWindow.bind(this)
     );
-    [this._btnCloseRecipeOverlay, this._overlay].forEach(el =>
+    [this._btnClose, this._overlay].forEach(el =>
       el.addEventListener('click', () => location.reload())
     );
   }
