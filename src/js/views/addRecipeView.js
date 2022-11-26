@@ -9,10 +9,21 @@ class AddRecipeView extends View {
   _btnOpen = document.querySelector('.nav__btn--add-recipe');
   _btnClose = document.querySelector('.btn--close-modal');
 
-  constructor() {
+  
+ constructor() {
     super();
-    this._addHandlerShowWindow();
-    this._addHandlerHideWindow();
+    this._addHandlerRecipeWindowToggle();
+   
+  }
+
+ _addHandlerRecipeWindowToggle() {
+    this._btnOpenNewRecipeOverlay.addEventListener(
+      'click',
+      this.toggleWindow.bind(this)
+    );
+    [this._btnCloseRecipeOverlay, this._overlay].forEach(el =>
+      el.addEventListener('click', () => location.reload())
+    );
   }
 
   toggleWindow() {
